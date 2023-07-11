@@ -7,21 +7,21 @@ resources:
 
 hooks:
   ApplicationStop:
-    - location: scripts/application_stop.sh
+    - location: scripts/application_stop.sh # docker stop my-nginx-container
       timeout: 300
       runas: root
 
   BeforeInstall:
-    - location: scripts/before_install.sh
+    - location: scripts/before_install.sh # docker pull nginx:latest
       timeout: 300
       runas: root
 
   AfterInstall:
-    - location: scripts/after_install.sh
+    - location: scripts/after_install.sh # docker container prune -f
       timeout: 300
       runas: root
 
   ApplicationStart:
-    - location: scripts/application_start.sh
+    - location: scripts/application_start.sh # docker run -d --name my-nginx-container -p 80:80 nginx:latest : start
       timeout: 300
       runas: root
