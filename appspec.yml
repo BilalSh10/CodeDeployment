@@ -1,0 +1,20 @@
+version: 0.0
+os: linux
+
+resources:
+  - name: MyEC2Instance
+    instanceType: t2.micro
+    tags:
+      - Key: Name
+        Value: MyEC2Instance
+
+hooks:
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 60
+      runas: root
+
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 60
+      runas: root
