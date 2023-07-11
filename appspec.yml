@@ -2,11 +2,11 @@ version: 0.0
 os: linux
 
 resources:
-  - name: MyEC2Instance
+  - name: devopsex4
     instanceType: t2.micro
     tags:
-      - Key: Name
-        Value: MyEC2Instance
+      - Key: Environment
+        Value: Ex4
 
 hooks:
   ApplicationStop:
