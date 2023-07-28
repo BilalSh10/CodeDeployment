@@ -1,2 +1,2 @@
 #!/bin/bash
-docker stop my-nginx-container
+docker stop my-flask-container
