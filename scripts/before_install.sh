@@ -1,2 +1,2 @@
 #!/bin/bash
-docker pull nginx:latest
+docker pull bilalsh10/myflaskapp:latest
